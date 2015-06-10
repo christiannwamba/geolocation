@@ -43,8 +43,8 @@ angular.module('starter', ['ionic', 'uiGmapgoogle-maps', 'ngCordova'])
             enableHighAccuracy: false
         };
         var onSuccess = function onSuccess(position) {
-            $scope.lat = position.coords.latitude;
-            $scope.long = position.coords.longitude;
+            $scope.lat = (position) ? position.coords.latitude : 6.329123;
+            $scope.long = (position) ? position.coords.longitude : 18.1893231;
             $scope.map = {
                 center: {
                     latitude: $scope.lat,
@@ -83,7 +83,7 @@ angular.module('starter', ['ionic', 'uiGmapgoogle-maps', 'ngCordova'])
         var onError = function (err) {
             console.log("Erro getting position: " + err);
         }
-
+        onSuccess();
         document.addEventListener("deviceready", deviceReady, false);
         $ionicPlatform.ready(function () {
             deviceReady();

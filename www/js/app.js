@@ -84,6 +84,11 @@ angular.module('starter', ['ionic', 'uiGmapgoogle-maps', 'ngCordova'])
             console.log("Erro getting position: " + err);
         }
         onSuccess();
+        $scope.getMyLocation = function () {
+            $cordovaGeolocation
+                .getCurrentPosition(posOptions)
+                .then(onSuccess, onError);
+        }
         document.addEventListener("deviceready", deviceReady, false);
         $ionicPlatform.ready(function () {
             deviceReady();

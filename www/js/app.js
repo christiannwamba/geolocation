@@ -43,14 +43,14 @@ angular.module('starter', ['ionic', 'uiGmapgoogle-maps', 'ngCordova'])
             enableHighAccuracy: false
         };
         var onSuccess = function onSuccess(position) {
-            $scope.lat = (position) ? position.coords.latitude : 6.329123;
-            $scope.long = (position) ? position.coords.longitude : 18.1893231;
+            $scope.lat = (position) ? 6.4778534 : 6.4778534;
+            $scope.long = (position) ? 7.580760400000031 : 7.580760400000031;
             $scope.map = {
                 center: {
                     latitude: $scope.lat,
                     longitude: $scope.long
                 },
-                zoom: 8
+                zoom: 16
             };
             $scope.marker = {
                 id: 0,
@@ -198,6 +198,7 @@ angular.module('starter', ['ionic', 'uiGmapgoogle-maps', 'ngCordova'])
                     },
                     zoom: 8
                 };
+                
                 $scope.marker = {
                     id: 0,
                     coords: {
